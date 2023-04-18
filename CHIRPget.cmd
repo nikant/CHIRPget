@@ -9,7 +9,7 @@ set today=%date:~-4%%date:~3,2%%date:~0,2%
 echo.
 set /a day=%day%+1
 set /a testdate=%today%-%day%
-echo !today!
+echo !testdate!
 echo.
 set url=https://trac.chirp.danplanet.com/chirp_next/next-%testdate%/chirp-next-%testdate%-win32.zip
 echo !url!
