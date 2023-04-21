@@ -24,7 +24,11 @@ if errorlevel 8 (
         exit /b 1
     )
 ) else (
-    start /wait wget.exe !url! -O chirp-next-%testdate%-win32.zip
+    if exist chirp-next-%testdate%-win32.zip (
+       rem file exists
+    ) else (
+       start /wait wget.exe !url! -O chirp-next-%testdate%-win32.zip
+    )
     start /wait 7z32x.exe x chirp-next-%testdate%-win32.zip -ochirp-next-%testdate%-win32 -y
     del chirp-next-%testdate%-win32.zip
 )
